@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  Postgres:
+    container_name: postgres
+    image: postgres:latest
+    command: -c 'config_file=/etc/postgresql/postgresql.conf'
+    ports:
+      - "5432:5432/tcp"
+    environment:
+      - POSTGRES_PASSWORD=DORZHIEV_203
+      - POSTGRES_USER=DORZHIEV_203
+      - POSTGRES_DB=DORZHIEV_203
+    volumes:
+      - C:\Users\Donir\DataGripProjects\DB_HW4\config\:/etc/postgresql/
+      - C:\Users\Donir\DataGripProjects\DB_HW4\scripts\:/docker-entrypoint-initdb.d/
